@@ -22,6 +22,7 @@ public class Component {
     private Double price ;
     private Integer stock;
     private Category category;
+    private Double total;
     
     public Component(Product p){
         this.category=p.getCategory();
@@ -30,6 +31,7 @@ public class Component {
         this.stock=p.getStock();
         this.cuantity = 1;
         this.product = p;
+        this.total=this.cuantity*this.price;
     }
     public Component(){}
     
@@ -52,7 +54,9 @@ public class Component {
     public Integer getStock(){
         return this.stock;
     }
-    
+    public Double getTotal(){
+        return this.total;
+    }
 
         
     
@@ -67,16 +71,24 @@ public class Component {
     }
     public void setCuantity(Integer i){
         this.cuantity=i;
+        this.total = this.price*this.cuantity;
     }
     public void setStock(Integer s){
         this.stock=s;
     }
+    
+    public void setTotal(Double d){
+        this.total=d;
+    }
 
     public void incCuantity(){
         this.cuantity ++ ;
+        this.total += this.price;
     }
     public void decCuantity(){
         this.cuantity -- ;
+                this.total -= this.price;
+
     }
     public void setProduct(Product p){
         this.product=p;

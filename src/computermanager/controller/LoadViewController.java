@@ -9,20 +9,26 @@ import computermanager.model.Component;
 import computermanager.model.Pc;
 import computermanager.model.PcList;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -54,6 +60,7 @@ public class LoadViewController implements Initializable {
     private TableView<Component> mainMyPcTableView ;
    
     private PcList aux ;
+    private Pc newPc;
     /**
      * Initializes the controller class.
      */
@@ -69,17 +76,29 @@ public class LoadViewController implements Initializable {
             nameColumn.setCellValueFactory(new PropertyValueFactory<Pc,String>("name"));
             tableView.setItems(ObservablePclist);
         }catch(Exception e){
-            System.out.println("Error super chungo de la mort" + e);            
+            //System.out.println("Error super chungo de la mort" + e);            
         }
 
     }
 
     @FXML
-    private void loadButtonClicked(MouseEvent event) {
+    private void loadButtonClicked(MouseEvent event) throws IOException {
         Pc aux = tableView.getSelectionModel().getSelectedItem();
+        //editable = aux.editable;
         ObservableList<Component> aux2 = FXCollections.observableList(aux.getComponentList());
         mainMyPcTableView.setItems(aux2);
-
+        newPc.editable=aux.editable;
+        //System.out.println(newPc.editable);
+        //System.out.println(aux.editable);
+        FXMLLoader loader = new FXMLLoader (getClass().getResource("/computermanager/view/MainView.fxml"));
+        HBox root = (HBox) loader.load();
+        loader.<MainViewController>getController().init(aux2,aux);
+        Scene scene = new Scene(root,900,800);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        Node n = (Node) event.getSource();
+        n.getScene().getWindow().hide();
 
     }
 
@@ -92,7 +111,7 @@ public class LoadViewController implements Initializable {
     @FXML
     private void deleteButtonClicked(MouseEvent event) {
         int index = tableView.getSelectionModel().getSelectedIndex();
-        if(index>=3){
+        if(index<=3){
         tableView.getItems().remove(index);
         PcList newPcList = new PcList();
         newPcList.setPcList(tableView.getItems());
@@ -112,7 +131,8 @@ public class LoadViewController implements Initializable {
         
     }
     
-    public void initList(TableView<Component> aux){
+    public void initList(TableView<Component> aux,Pc p){
         mainMyPcTableView = aux ;
+        newPc = p ;
     }
 }

@@ -1,14 +1,14 @@
 To do list :
 
 1 DONE add a listener in the edit view so you can change the cuantity of the product with the text field
-2 Visualization and selection of PC in load view
+2 DONE Visualization and selection of PC in load view
 3 DONE Visualization of components in save view
 4 Add price with iva everywhere it's needed
 5 Disable all buttons where needed
 6 Add errors missatges
 7 Implement Checkout View
-8 Add filters for price and name
-9 Add lisener to choiceBox so lookfor it's automatic
+8 DONE Add filters for price and name
+9 DONE Add lisener to choiceBox so lookfor it's automatic
 10 Change comparation in addButtonClicked so the comparation it's made with description and no with product(When a Pc is loaded Components do not load Product well)
 11 Test work with diferents main views loading/saving
 12 Make sure a PC has the core parts completed before checkout

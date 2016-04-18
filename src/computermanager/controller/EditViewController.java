@@ -65,7 +65,7 @@ public class EditViewController implements Initializable {
                 component.setCuantity(res);
                 list.refresh();
                 }else{
-                    System.out.println("Aqui va un error");
+                    //System.out.println("Aqui va un error");
                     cuantityTextField.setText(oldVal.toString());
                 }
             }

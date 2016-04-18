@@ -19,6 +19,8 @@ public class Pc {
     
     private String name;
     private List<Component> componentList ;
+    public boolean editable;
+    public Double totalPrice;
     
     
     public Pc(){}
@@ -26,6 +28,7 @@ public class Pc {
     public Pc(String s,List<Component> l){
         this.name=s;
         this.componentList=l;
+        this.editable = false;
     }
     
     @XmlElement(name = "Component")

@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/Apuntes/To%20do</file>
-            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/model/Pc.java</file>
-            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/model/Component.java</file>
             <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/controller/MainViewController.java</file>
-            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/controller/SaveViewController.java</file>
+            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/view/NeededView.fxml</file>
             <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/controller/LoadViewController.java</file>
+            <file>file:/C:/Users/JoseManuel/Documents/NetBeansProjects/ComputerManager/src/computermanager/controller/NeededViewController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -8,7 +8,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="computermanager.controller.LoadViewController">
    <children>
-      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableView" prefHeight="321.0" prefWidth="256.0">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>

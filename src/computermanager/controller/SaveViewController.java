@@ -68,6 +68,7 @@ public class SaveViewController implements Initializable {
     @FXML
     private void saveButtonClicked(MouseEvent event) {
         Pc pc = new Pc(nameTextField.getText(), list);
+        pc.editable =  true;
         /*
         PcList theList = new PcList();
         List<Pc> arrayList = new ArrayList<Pc>();
